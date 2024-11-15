@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Network - Team Downline</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+      .genealogy-body{
+          white-space: nowrap;
+          overflow-y: scroll;
+          overflow-x: auto;
+          padding: 50px;
+          height: 500px;
+          padding-top: 10px;
+          text-align: center;
+      }
+      .genealogy-tree{
+      display: inline-block;
+      }
+      .genealogy-tree ul {
+          padding-top: 20px; 
+          position: relative;
+          padding-left: 0px;
+          display: flex;
+          justify-content: center;
+      }
+      .genealogy-tree li {
+          float: left; text-align: center;
+          list-style-type: none;
+          position: relative;
+          padding: 20px 5px 0 5px;
+      }
+      .genealogy-tree li::before, .genealogy-tree li::after{
+          content: '';
+          position: absolute; 
+      top: 0; 
+      right: 50%;
+          border-top: 2px solid #ccc;
+          width: 50%; 
+      height: 18px;
+      }
+      .genealogy-tree li::after{
+          right: auto; left: 50%;
+          border-left: 2px solid #ccc;
+      }
+      .genealogy-tree li:only-child::after, .genealogy-tree li:only-child::before {
+          display: none;
+      }
+      .genealogy-tree li:only-child{ 
+          padding-top: 0;
+      }
+      .genealogy-tree li:first-child::before, .genealogy-tree li:last-child::after{
+          border: 0 none;
+      }
+      .genealogy-tree li:last-child::before{
+          border-right: 2px solid #ccc;
+          border-radius: 0 5px 0 0;
+          -webkit-border-radius: 0 5px 0 0;
+          -moz-border-radius: 0 5px 0 0;
+      }
+      .genealogy-tree li:first-child::after{
+          border-radius: 5px 0 0 0;
+          -webkit-border-radius: 5px 0 0 0;
+          -moz-border-radius: 5px 0 0 0;
+      }
+      .genealogy-tree ul ul::before{
+          content: '';
+          position: absolute; top: 0; left: 50%;
+          border-left: 2px solid #ccc;
+          width: 0; height: 20px;
+      }
+      .genealogy-tree li a{
+          text-decoration: none;
+          color: #666;
+          font-family: arial, verdana, tahoma;
+          font-size: 11px;
+          display: inline-block;
+          border-radius: 5px;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+      }
+      .circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #ddd;
+}
+</style>
+</head>
+<body >
+
+<div class="container my-5">
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="col-md-3 bg-light p-4 rounded">
+            <h4>User Panel</h4>
+            <p>User Id : 12345678</p>
+            <button class="btn btn-light mb-2 d-flex justify-content-between w-100">
+                My Profile <span>&#8250;</span>
+            </button>
+            <button class="btn btn-light mb-2 d-flex justify-content-between w-100">
+                Product Gallery <span>&#8250;</span>
+            </button>
+            <button class="btn btn-light mb-2 d-flex justify-content-between w-100">
+                Financial <span>&#8250;</span>
+            </button>
+            <button class="btn btn-light mb-2 d-flex justify-content-between w-100">
+                Manage Network <span>&#8250;</span>
+            </button>
+            <button class="btn btn-light mb-2 d-flex justify-content-between w-100">
+                Dashboard Review <span>&#8250;</span>
+            </button>
+        </div>
+
+        <!-- Main Content -->
+        <div class="col-md-9">
+            <div class="text-center mb-4">
+                <h1><strong>Manage Network</strong></h1>
+                <h2>Genealogy</h2>
+            </div>
+            <div class="d-flex justify-content-center mb-4 btn-group-custom">
+                <button class="btn btn-dark active mx-1"><b>Add New <br> Client</b></button>
+                <button class="btn btn-dark active mx-1"><b>Genealogy</b></button>
+                <button class="btn btn-dark active mx-1"><b>Placement <br> Box</b></button>
+                <button class="btn btn-dark active mx-1"><b>Referral <br> Downline</b></button>
+                <button class="btn btn-dark mx-1"><b>Team <br> Downline</b></button>
+                
+            </div>
+            <div class="mb-4 d-flex justify-content-center mb-4 btn-group-custom">
+                <button class="btn btn-dark mx-2">Binary Tree</button>
+                <button class="btn btn-outline-dark mx-2"><a href="LevelUpTree.html" style="text-decoration: none; color: black  ;">Level Tree</a></button>
+            </div>
+            <!-- Binary Tree Section -->
+            <div class="tree-container text-center bg-light">
+                
+                
+                <!-- Binary Tree Structure -->
+                <div class="body genealogy-body genealogy-scroll">
+        <div class="genealogy-tree">
+          <ul>
+            <li>
+              <a href="javascript:void(0);">
+                <div class="text-center mb-2 position-relative">
+                  <div class="circle mx-auto"></div>
+                  <div>First</div>
+                  <div class="text-muted small mt-1">Khalid@134<br />[Status: Active]</div>
+                </div>
+              </a>
+              <ul class="active">
+                <li>
+                  <a href="javascript:void(0);">
+                    <div class="text-center mb-2 position-relative">
+                      <div class="circle mx-auto"></div>
+                      <div>Second</div>
+                      <div class="text-muted small mt-1">Khalid@134<br />[Status: Active]</div>
+                    </div>
+                  </a>
+                  <ul class="active">
+                    <li>
+                      <a href="javascript:void(0);">
+                        <div class="text-center mb-2 position-relative">
+                          <div class="circle mx-auto"></div>
+                          <div>Third</div>
+                          <div class="text-muted small mt-1">Khalid@134<br />[Status: Active]</div>
+                          <i class='btn bx bx-plus-circle'></i>
+                        </div>
+                      </a>
+                      <ul>
+                        <li>
+                          <a href="javascript:void(0);">
+                            <div class="text-center mb-2 position-relative">
+                              <div class="circle mx-auto"></div>
+                              <div>Fourth-1</div>
+                              <div class="text-muted small mt-1">Khalid@134<br />[Status: Active]</div>
+                              <i class='btn bx bx-plus-circle'></i>
+                            </div>
+                          </a>
+                          <ul>
+                            <li>
+                              <a href="javascript:void(0);">
+                                <div class="text-center mb-2 position-relative">
+                                  <div class="circle mx-auto"></div>
+                                  <div>End</div>
+                                  <div class="text-muted small mt-1">Khalid@134<br />[Status: Active]</div>
+                                  <i class='btn bx bx-plus-circle'></i>
+                                </div>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="javascript:void(0);">
+                                <div class="text-center mb-2 position-relative">
+                                  <div class="circle mx-auto"></div>
+                                  <div>End</div>
+                                  <div class="text-muted small mt-1">Khalid@134<br />[Status: Active]</div>
+                                  <i class='btn bx bx-plus-circle'></i>
+                                </div>
+                              </a>
+                            </li>
+                          </ul>
+                          <li>
+                            <a href="javascript:void(0);">
+                              <div class="text-center mb-2 position-relative">
+                                <div class="circle mx-auto"></div>
+                                <div>Fourth-2</div>
+                                <div class="text-muted small mt-1">Khalid@134<br />[Status: Active]</div>
+                                <i class='btn bx bx-plus-circle'></i>
+                              </div>
+                            </a>
+                            <ul>
+                              <li>
+                                <a href="javascript:void(0);">
+                                  <div class="text-center mb-2 position-relative">
+                                    <div class="circle mx-auto"></div>
+                                    <div>End</div>
+                                    <div class="text-muted small mt-1">Khalid@134<br />[Status: Active]</div>
+                                    <i class='btn bx bx-plus-circle'></i>
+                                  </div>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="javascript:void(0);">
+                                  <div class="text-center mb-2 position-relative">
+                                    <div class="circle mx-auto"></div>
+                                    <div>End</div>
+                                    <div class="text-muted small mt-1">Khalid@134<br />[Status: Active]</div>
+                                    <i class='btn bx bx-plus-circle'></i>
+                                  </div>
+                                </a>
+                              </li>
+                            </ul>
+                          </li>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0);">
+                        <div class="text-center mb-2 position-relative">
+                          <div class="circle mx-auto"></div>
+                          <div>Mr.</div>
+                          <div class="text-muted small mt-1">Khalid@134<br />[Status: Active]</div>
+                          <i class='btn bx bx-plus-circle'></i>
+                        </div>
+                      </a>
+                      <ul>
+                        <li>
+                          <a href="javascript:void(0);">
+                            <div class="text-center mb-2 position-relative">
+                              <div class="circle mx-auto"></div>
+                              <div>Mr. Khalid</div>
+                              <div class="text-muted small mt-1">Khalid@134<br />[Status: Active]</div>
+                              <i class='btn bx bx-plus-circle'></i>
+                            </div>
+                          </a>
+                          <ul>
+                            <li>
+                              <a href="javascript:void(0);">
+                                <div class="text-center mb-2 position-relative">
+                                  <div class="circle mx-auto"></div>
+                                  <div>End</div>
+                                  <div class="text-muted small mt-1">Khalid@134<br />[Status: Active]</div>
+                                  <i class='btn bx bx-plus-circle'></i>
+                                </div>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="javascript:void(0);">
+                                <div class="text-center mb-2 position-relative">
+                                  <div class="circle mx-auto"></div>
+                                  <div>End</div>
+                                  <div class="text-muted small mt-1">Khalid@134<br />[Status: Active]</div>
+                                  <i class='btn bx bx-plus-circle'></i>
+                                </div>
+                              </a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0);">
+                            <div class="text-center mb-2 position-relative">
+                              <div class="circle mx-auto"></div>
+                              <div>Mr.10</div>
+                              <div class="text-muted small mt-1">Khalid@134<br />[Status: Active]</div>
+                              <i class='btn bx bx-plus-circle'></i>
+                            </div>
+                          </a>
+                          <ul>
+                            <li>
+                              <a href="javascript:void(0);">
+                                <div class="text-center mb-2 position-relative">
+                                  <div class="circle mx-auto"></div>
+                                  <div>End</div>
+                                  <div class="text-muted small mt-1">Khalid@134<br />[Status: Active]</div>
+                                  <i class='btn bx bx-plus-circle'></i>
+                                </div>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="javascript:void(0);">
+                                <div class="text-center mb-2 position-relative">
+                                  <div class="circle mx-auto"></div>
+                                  <div>End</div>
+                                  <div class="text-muted small mt-1">Khalid@134<br />[Status: Active]</div>
+                                  <i class='btn bx bx-plus-circle'></i>
+                                </div>
+                              </a>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="javascript:void(0);">
+                    <div class="text-center mb-2 position-relative">
+                      <div class="circle mx-auto"></div>
+                      <div>Second</div>
+                      <div class="text-muted small mt-1">Khalid@134<br />[Status: Active]</div>
+                    </div>
+                  </a>
+                  <ul class="active">
+                    <li>
+                      <a href="javascript:void(0);">
+                        <div class="text-center mb-2 position-relative">
+                          <div class="circle mx-auto"></div>
+                          <div>Third</div>
+                          <div class="text-muted small mt-1">Khalid@134<br />[Status: Active]</div>
+                          <i class='btn bx bx-plus-circle'></i>
+                        </div>
+                      </a>
+                      <ul>
+                        <li>
+                          <a href="javascript:void(0);">
+                            <div class="text-center mb-2 position-relative">
+                              <div class="circle mx-auto"></div>
+                              <div>Fourth</div>
+                              <div class="text-muted small mt-1">Khalid@134<br />[Status: Active]</div>
+                              <i class='btn bx bx-plus-circle'></i>
+                            </div>
+                          </a>
+                          <ul>
+                            <li>
+                              <a href="javascript:void(0);">
+                                <div class="text-center mb-2 position-relative">
+                                  <div class="circle mx-auto"></div>
+                                  <div>End</div>
+                                  <div class="text-muted small mt-1">Khalid@134<br />[Status: Active]</div>
+                                  <i class='btn bx bx-plus-circle'></i>
+                                </div>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="javascript:void(0);">
+                                <div class="text-center mb-2 position-relative">
+                                  <div class="circle mx-auto"></div>
+                                  <div>End</div>
+                                  <div class="text-muted small mt-1">Khalid@134<br />[Status: Active]</div>
+                                  <i class='btn bx bx-plus-circle'></i>
+                                </div>
+                              </a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0);">
+                            <div class="text-center mb-2 position-relative">
+                              <div class="circle mx-auto"></div>
+                              <div>Mr. Khalid</div>
+                              <div class="text-muted small mt-1">Khalid@134<br />[Status: Active]</div>
+                              <i class='btn bx bx-plus-circle'></i>
+                            </div>
+                          </a>
+                          <ul>
+                            <li>
+                              <a href="javascript:void(0);">
+                                <div class="text-center mb-2 position-relative">
+                                  <div class="circle mx-auto"></div>
+                                  <div>End</div>
+                                  <div class="text-muted small mt-1">Khalid@134<br />[Status: Active]</div>
+                                  <i class='btn bx bx-plus-circle'></i>
+                                </div>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="javascript:void(0);">
+                                <div class="text-center mb-2 position-relative">
+                                  <div class="circle mx-auto"></div>
+                                  <div>End</div>
+                                  <div class="text-muted small mt-1">Khalid@134<br />[Status: Active]</div>
+                                  <i class='btn bx bx-plus-circle'></i>
+                                </div>
+                              </a>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0);">
+                        <div class="text-center mb-2 position-relative">
+                          <div class="circle mx-auto"></div>
+                          <div>Khalid1</div>
+                          <div class="text-muted small mt-1">Khalid@134<br />[Status: Active]</div>
+                          <i class='btn bx bx-plus-circle'></i>
+                        </div>
+                      </a>
+                      <ul>
+                        <li>
+                          <a href="javascript:void(0);">
+                            <div class="text-center mb-2 position-relative">
+                              <div class="circle mx-auto"></div>
+                              <div>End</div>
+                              <div class="text-muted small mt-1">Khalid@134<br />[Status: Active]</div>
+                              <i class='btn bx bx-plus-circle'></i>
+                            </div>
+                          </a>
+                          <ul>
+                            <li>
+                              <a href="javascript:void(0);">
+                                <div class="text-center mb-2 position-relative">
+                                  <div class="circle mx-auto"></div>
+                                  <div>End</div>
+                                  <div class="text-muted small mt-1">Khalid@134<br />[Status: Active]</div>
+                                  <i class='btn bx bx-plus-circle'></i>
+                                </div>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="javascript:void(0);">
+                                <div class="text-center mb-2 position-relative">
+                                  <div class="circle mx-auto"></div>
+                                  <div>End</div>
+                                  <div class="text-muted small mt-1">Khalid@134<br />[Status: Active]</div>
+                                  <i class='btn bx bx-plus-circle'></i>
+                                </div>
+                              </a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0);">
+                            <div class="text-center mb-2 position-relative">
+                              <div class="circle mx-auto"></div>
+                              <div>End</div>
+                              <div class="text-muted small mt-1">Khalid@134<br />[Status: Active]</div>
+                              <i class='btn bx bx-plus-circle'></i>
+                            </div>
+                          </a>
+                          <ul>
+                            <li>
+                              <a href="javascript:void(0);">
+                                <div class="text-center mb-2 position-relative">
+                                  <div class="circle mx-auto"></div>
+                                  <div>End</div>
+                                  <div class="text-muted small mt-1">Khalid@134<br />[Status: Active]</div>
+                                  <i class='btn bx bx-plus-circle'></i>
+                                </div>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="javascript:void(0);">
+                                <div class="text-center mb-2 position-relative">
+                                  <div class="circle mx-auto"></div>
+                                  <div>End</div>
+                                  <div class="text-muted small mt-1">Khalid@134<br />[Status: Active]</div>
+                                  <i class='btn bx bx-plus-circle'></i>
+                                </div>
+                              </a>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+            <!-- End of Binary Tree Section -->
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" 
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+      <script>
+        $(function () {
+            $('.genealogy-tree ul').hide();
+            $('.genealogy-tree>ul').show();
+            $('.genealogy-tree ul.active').show();
+            $('.genealogy-tree li').on('click', function (e) {
+                var children = $(this).find('> ul');
+                if (children.is(":visible")) children.hide('fast').removeClass('active');
+                else children.show('fast').addClass('active');
+                e.stopPropagation();
+            });
+        });
+
+      </script>
+
+</body>
+</html>
